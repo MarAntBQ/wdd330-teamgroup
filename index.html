@@ -133,13 +133,15 @@
         'car',
         'truck'];
 
-        console.log(data.reduce((total, transport) => {
-            if(transport === 'car'){
-                return total + 1;
-            }
-        }, 0))
-      
+        const finalExercise = data.reduce(function(obj, item) {
+      if (!obj[item]) {
+        obj[item] = 0;
+      }
+      obj[item]++;
+      return obj;
+    }, {});
 
+    console.log(finalExercise);
     </script>
   </body>
 </html>
