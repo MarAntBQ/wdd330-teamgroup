@@ -1,6 +1,33 @@
 * {
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
+}
+
+header h1 {
+  text-align: center;
+  padding: 10px;
+  background: brown;
+  color: white;
+}
+
+.game .tic-tac {
+  width: 90%;
+  margin: 5px auto;
+}
+.game .tic-tac .row {
+  display: flex;
+}
+.game .tic-tac .row .box {
+  width: 33.3333333333%;
+  background: #a19595;
+  min-height: 20vh;
+  border: 3px solid black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 30px;
+  font-weight: bold;
 }
 
 /*# sourceMappingURL=styles.css.map */

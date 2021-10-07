@@ -1,4 +1,40 @@
 * {
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
+}
+
+header {
+    h1 {
+        text-align: center;
+        padding: 10px;
+        background: brown;
+        color: white;
+    }
+}
+
+.game {
+    .tic-tac {
+        width: 90%;
+        margin: 5px auto;
+        //min-height: 10vh;
+        //background: green;
+        .row {
+            display: flex;
+            .box {
+                $twith: 100%;
+                $pattern: 3;
+                $dividing: $twith / $pattern;
+                width: $dividing;
+                background: rgb(161, 149, 149);
+                min-height: 20vh;
+                border: 3px solid black;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                font-size: 30px;
+                font-weight: bold;
+            }
+        }
+    }
 }
