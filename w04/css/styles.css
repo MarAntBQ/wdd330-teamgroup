@@ -20,7 +20,6 @@ header h1 {
 }
 .game .tic-tac .row .box {
   width: 33.3333333333%;
-  background: #a19595;
   min-height: 20vh;
   border: 3px solid black;
   display: flex;
@@ -28,6 +27,39 @@ header h1 {
   align-items: center;
   font-size: 30px;
   font-weight: bold;
+  transition: 0.5s;
+}
+.game .tic-tac .row .box:hover {
+  background: #2e3969;
+  color: white;
+}
+.game .tic-tac .row:nth-child(1) .box:nth-child(1) {
+  border-top: 0px;
+  border-left: 0px;
+}
+.game .tic-tac .row:nth-child(1) .box:nth-child(2) {
+  border-top: 0px;
+}
+.game .tic-tac .row:nth-child(1) .box:nth-child(3) {
+  border-top: 0px;
+  border-right: 0px;
+}
+.game .tic-tac .row:nth-child(2) .box:nth-child(1) {
+  border-left: 0px;
+}
+.game .tic-tac .row:nth-child(2) .box:nth-child(3) {
+  border-right: 0px;
+}
+.game .tic-tac .row:nth-child(3) .box:nth-child(1) {
+  border-bottom: 0px;
+  border-left: 0px;
+}
+.game .tic-tac .row:nth-child(3) .box:nth-child(2) {
+  border-bottom: 0px;
+}
+.game .tic-tac .row:nth-child(3) .box:nth-child(3) {
+  border-right: 0px;
+  border-bottom: 0px;
 }
 
 /*# sourceMappingURL=styles.css.map */

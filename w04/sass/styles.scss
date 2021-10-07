@@ -26,7 +26,7 @@ header {
                 $pattern: 3;
                 $dividing: $twith / $pattern;
                 width: $dividing;
-                background: rgb(161, 149, 149);
+                
                 min-height: 20vh;
                 border: 3px solid black;
                 display: flex;
@@ -34,6 +34,63 @@ header {
                 align-items: center;
                 font-size: 30px;
                 font-weight: bold;
+                //margin: 5px;
+                transition: 0.5s;
+                &:hover {
+                    background: rgb(46, 57, 105);
+                    color: white;
+                }
+            }
+            &:nth-child(1) {
+                .box {
+                    //background: green;
+                    &:nth-child(1) {
+                        border-top: 0px;
+                        border-left: 0px;
+                    }
+                    &:nth-child(2) {
+                        border-top: 0px;
+                        //border-left: 0px;
+                    }
+                    &:nth-child(3) {
+                        border-top: 0px;
+                        border-right: 0px;
+                    }
+                }
+            }
+            &:nth-child(2) {
+                .box {
+                    //background: green;
+                    &:nth-child(1) {
+                        //border-top: 0px;
+                        border-left: 0px;
+                    }
+                    &:nth-child(2) {
+                        //border-top: 0px;
+                        //border-left: 0px;
+                    }
+                    &:nth-child(3) {
+                        //border-top: 0px;
+                        border-right: 0px;
+                    }
+                }
+            }
+            &:nth-child(3) {
+                .box {
+                    //background: green;
+                    &:nth-child(1) {
+                        border-bottom: 0px;
+                        border-left: 0px;
+                    }
+                    &:nth-child(2) {
+                        border-bottom: 0px;
+                        //border-left: 0px;
+                    }
+                    &:nth-child(3) {
+                        border-right: 0px;
+                        border-bottom: 0px;
+                    }
+                }
             }
         }
     }
