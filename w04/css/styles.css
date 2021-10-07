@@ -20,7 +20,7 @@ header h1 {
 }
 .game .tic-tac .row .box {
   width: 33.3333333333%;
-  min-height: 20vh;
+  min-height: 33vh;
   border: 3px solid black;
   display: flex;
   justify-content: center;
