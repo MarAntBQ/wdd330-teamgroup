@@ -24,11 +24,19 @@ header {
   height: 70px;
   display: flex;
   align-items: center;
+  position: fixed;
+  width: 100%;
+  max-width: 1400px;
+  min-width: 300px;
+  top: 0;
 }
 header h1 {
   width: 100%;
 }
 
+main {
+  margin-top: 70px;
+}
 main img {
   max-width: 100%;
 }
