@@ -33,25 +33,48 @@ const hikeList = [
         "Take Highway 20 north to Ashton. Turn right into the town and continue through. Follow that road for a few miles then turn left again onto the Cave Falls road. Drive to until you see the sign for Bechler Meadows on the left. Turn there. There is a parking area at the trailhead."
     }
   ];
+
+  // Create the hike class
+  class Hike {
+    // Constructor 
+    constructor(listOfHikes) {
+      this.listOfHikes = listOfHikes;
+    }
+    
+    // Methods
+    showHikeList() {
+        const hikeListElement = document.getElementById("hikes");
+        hikeListElement.innerHTML = "";
+        renderHikeList(hikeList, hikeListElement);
+    }
+
+    
+    
+
+  }
+
   
   const imgBasePath = "//byui-cit.github.io/cit261/examples/";
-  //on load grab the array and insert it into the page
-  window.addEventListener("load", () => {
-    showHikeList();
-  });
-  
-  function showHikeList() {
-    const hikeListElement = document.getElementById("hikes");
-    hikeListElement.innerHTML = "";
-    renderHikeList(hikeList, hikeListElement);
-  }
   
   function renderHikeList(hikes, parent) {
     hikes.forEach(hike => {
-      console.log(hike)
+      //console.log(hike)
       parent.appendChild(renderOneHike(hike));
+
     });
+
+    // Get a list of the headers we just rendered
+    const listOfheaders = document.getElementsByClassName("titleButton")
+
+    // Loop through the list of headers and set an onclick method
+    for (let i=0; i<listOfheaders.length; i++) {
+      listOfheaders[i].addEventListener("click", () => {
+              // Call the detailViewHike function when the header is clicked
+              detailViewHike(i);
+          });
+    }
   }
+
   function renderOneHike(hike) {
     const item = document.createElement("li");
   
@@ -71,11 +94,25 @@ const hikeList = [
     return item;
   }
 
-  function detailViewHike(hike) {
-    console.log("view")
+  function detailViewHike(indexOfHike) {
     const hikeListElement = document.getElementById("hikes");
     hikeListElement.innerHTML = "";
-    hikeListElement.appendChild(renderOneHike(hike))
+    const hikeWeAreWorkingWith = hikeList[indexOfHike];
+    hikeListElement.appendChild(renderOneHike(hikeWeAreWorkingWith));
+    
+    // Add a back button below the hike we are working with
+    let backButton = document.createElement("BUTTON");
+    backButton.innerHTML = "Back";
+    
+    backButton.addEventListener("click" , () => {
+      hikeListElement.innerHTML = "";
+      renderHikeList(hikeList, hikeListElement)
+      backButton.style.display = "none";
+    });
+    hikeListElement.lastChild.appendChild(backButton);
+    
   }
 
-  export default hikes
+  
+
+  export default Hike

@@ -1,20 +1,22 @@
-import Hikes from './hikes.js';
+import Hike from './hikes.js';
 
 const body = document.getElementById("hikes")
 
-const myHike = new Hikes('hikeListId');
+// Create a new instance of the Hike class 
+let myHike = new Hike('hikeListId');
 
+// Render the hike list on the page
 myHike.showHikeList()
 
-const hikes = document.getElementsByClassName("titleButton")
-console.log(hikes)
+/*
+// Grab a list of the header elements
+      //const listOfheaders = document.getElementsByClassName("titleButton")
 
-for (let i=0; i<hikes.length; i++) {hikes[i].addEventListener("click", () => {
-             myHike.detailViewHike(myHike.hikeList[i])
-         })}
-
-// hikes.forEach(hike => {
-//     hike.addEventListener("click", () => {
-//         myHike.detailViewHike(myHike.hikeList[hikes.indexOf(hike)])
-//     })
-// })
+      // Loop through the list of headers and set an onclick method
+      for (let i=0; i<listOfheaders.length; i++) {
+        listOfheaders[i].addEventListener("click", () => {
+                // Call the detailViewHike method of each hike when the header is clicked
+                myHike.detailViewHike(i);
+                
+            });
+            */
