@@ -21,13 +21,14 @@ $color3: #C8AD55;
 $color4: #D0FCB3;
 $color5: #9BC59D;
 
-main {
-    h1 {
-        background: $color1;
+header {
+    background: $color1;
         color: white;
         padding: 10px;
         text-align: center;
-    }
+}
+main {
+    
 
     img {
         max-width: 100%;

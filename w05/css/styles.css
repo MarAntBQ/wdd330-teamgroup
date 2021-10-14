@@ -14,12 +14,13 @@ body {
   box-sizing: border-box;
 }
 
-main h1 {
+header {
   background: #271F30;
   color: white;
   padding: 10px;
   text-align: center;
 }
+
 main img {
   max-width: 100%;
 }
