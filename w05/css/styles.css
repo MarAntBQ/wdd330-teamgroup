@@ -15,6 +15,10 @@ body {
   scrollbar-color: #271F30 #C8AD55;
 }
 
+body::-webkit-scrollbar {
+  width: 8px;
+}
+
 body::-webkit-scrollbar-track {
   background: #C8AD55;
 }
