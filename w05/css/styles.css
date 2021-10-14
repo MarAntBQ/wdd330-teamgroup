@@ -52,8 +52,44 @@ main {
   background: white;
   min-height: 100vh;
 }
-main img {
+main .hikeStyles {
+  list-style: none;
+  padding: 10px;
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+main .hikeStyles li {
+  padding: 0px 0px 20px 0px;
+  background: #C8AD55;
+  margin: 5px 0px;
+  width: 45%;
+  box-shadow: 0 3px 7px 0 rgba(0, 0, 0, 0.12), inset 0 -1px 0 0 #dadce0;
+}
+@media (max-width: 900px) {
+  main .hikeStyles li {
+    width: 100%;
+  }
+}
+main .hikeStyles li .titleButton {
+  text-align: center;
+  padding: 18px;
+  background: #271F30;
+  color: white;
+}
+main .hikeStyles li .image {
+  padding: 0px 10px;
+}
+main .hikeStyles li .image img {
   max-width: 100%;
+}
+main .hikeStyles li div {
+  padding: 0px 10px;
+  text-align: center;
+  font-size: 20px;
+}
+main .hikeStyles li div div {
+  padding: 0px;
 }
 
 /*# sourceMappingURL=styles.css.map */
