@@ -48,13 +48,14 @@ const hikeList = [
   
   function renderHikeList(hikes, parent) {
     hikes.forEach(hike => {
+      console.log(hike)
       parent.appendChild(renderOneHike(hike));
     });
   }
   function renderOneHike(hike) {
     const item = document.createElement("li");
   
-    item.innerHTML = ` <h2>${hike.name}</h2>
+    item.innerHTML = ` <h2 class="titleButton">${hike.name}</h2>
           <div class="image"><img src="${imgBasePath}${hike.imgSrc}" alt="${hike.imgAlt}"></div>
           <div>
                   <div>
@@ -69,3 +70,12 @@ const hikeList = [
   
     return item;
   }
+
+  function detailViewHike(hike) {
+    console.log("view")
+    const hikeListElement = document.getElementById("hikes");
+    hikeListElement.innerHTML = "";
+    hikeListElement.appendChild(renderOneHike(hike))
+  }
+
+  export default hikes
