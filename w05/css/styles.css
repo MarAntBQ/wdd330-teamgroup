@@ -19,6 +19,14 @@ header {
   color: white;
   padding: 10px;
   text-align: center;
+  min-height: 70px;
+  max-height: 70px;
+  height: 70px;
+  display: flex;
+  align-items: center;
+}
+header h1 {
+  width: 100%;
 }
 
 main img {

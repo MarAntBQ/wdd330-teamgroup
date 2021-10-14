@@ -23,12 +23,21 @@ $color5: #9BC59D;
 
 header {
     background: $color1;
-        color: white;
-        padding: 10px;
-        text-align: center;
+    color: white;
+    padding: 10px;
+    text-align: center;
+    min-height: 70px;
+    max-height: 70px;
+    height: 70px;
+    display: flex;
+    align-items: center;
+    h1 {
+        width: 100%;
+    }
 }
+
 main {
-    
+
 
     img {
         max-width: 100%;
