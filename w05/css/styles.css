@@ -12,7 +12,7 @@ body {
   margin-right: auto;
   background: #ececec;
   scrollbar-width: thin;
-  scrollbar-color: #271F30 #C8AD55;
+  scrollbar-color: #C8AD55 #271F30;
 }
 
 body::-webkit-scrollbar {
@@ -20,11 +20,11 @@ body::-webkit-scrollbar {
 }
 
 body::-webkit-scrollbar-track {
-  background: #C8AD55;
+  background: #271F30;
 }
 
 body::-webkit-scrollbar-thumb {
-  background-color: #271F30;
+  background-color: #C8AD55;
 }
 
 header {
