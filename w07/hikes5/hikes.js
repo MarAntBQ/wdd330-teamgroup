@@ -39,10 +39,7 @@ const hikeList = [
   }
 ];
 
-// Create a list to house our comments
-const commentList = [{
-    
-}]
+
 
 const imgBasePath = '//byui-cit.github.io/cit261/examples/';
 
@@ -68,6 +65,8 @@ export default class Hikes {
     this.addHikeListener();
     // make sure the back button is hidden
     this.backButton.classList.add('hidden');
+    // Show the comment list
+    showCommentsList();
   }
   // show one hike with full details in the parentElement
   showOneHike(hikeName) {
@@ -112,7 +111,6 @@ function renderHikeList(parent, hikes) {
     const commentTextArea = document.getElementById(`${hikes.indexOf(hike)}-comment-textarea`);
     // Get the submit button
     const submitButton = document.getElementById(`${hikes.indexOf(hike)}-submit-button`);
-    console.log(newCommentButton);
 
     // Add the event listeners
     newCommentButton.addEventListener("click", () => {
@@ -126,8 +124,11 @@ function renderHikeList(parent, hikes) {
       let userInput = commentTextArea.value;
       
       // Build the comment and add it to local storage
-      let comment = new HikeComment(hike.name, userInput);
+      let comment = new HikeComment(hike.name, userInput, hikes.indexOf(hike));
       addCommentToLocalStorage(comment);
+
+      // Clear the text area
+      commentTextArea.value  = "";
 
     });
 
@@ -154,6 +155,9 @@ function renderOneHikeLight(hike, indexOfHike) {
           <div id="${indexOfHike}-comment-input-div" hidden>
             <textarea id="${indexOfHike}-comment-textarea"></textarea>
             <button id="${indexOfHike}-submit-button">Submit Comment</button>
+          </div>
+          <div class="display-comment-div" id="${indexOfHike}-display-comment-div">
+            <ul class="display-comment-list" id="${indexOfHike}-display-comment-list"></ul>
           </div>
         </div>
 </div>`;

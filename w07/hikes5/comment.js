@@ -23,12 +23,13 @@ and an input and button to add a new comment.
 export default class HikeComment {
 
     // Constructor
-    constructor(hikeName, comment) {
+    constructor(hikeName, comment, indexOfHike) {
         this.name = hikeName;
         this.date = Date.now();
         this.content = comment;
         // Set the local type property
         this.type = "comment";
+        this.indexOfHike = indexOfHike;
     }
     
     
