@@ -21,14 +21,21 @@ pokemonNames.forEach(pokemon => {
     .then((obj) => {
         const pokemon = document.createElement('div');
         pokemon.classList.add("pokemon");
+        pokemon.classList.add("box-3");
+        pokemon.classList.add("box-i-4");
+        pokemon.classList.add("box-m-6");
+        pokemon.classList.add("box-p-10");
 
         const name = document.createElement("h3")
-        name.textContent = "name: " + obj.name;
+        name.textContent = obj.name;
         name.classList.add("pokemon-name")
 
         const id = document.createElement("p")
         id.classList.add("pokemon-id")
         id.textContent = "id: " + obj.id;
+
+        const image = document.createElement("img")
+        image.setAttribute("src", "https://ichef.bbci.co.uk/news/640/cpsprodpb/C120/production/_104304494_mediaitem104304493.jpg");
 
         const weight = document.createElement("p")
         weight.classList.add("pokemon-weight")
@@ -39,6 +46,7 @@ pokemonNames.forEach(pokemon => {
         type.textContent = "type: " + obj.type;
 
         pokemon.appendChild(name)
+        pokemon.appendChild(image)
         pokemon.appendChild(id)
         pokemon.appendChild(weight)
         pokemon.appendChild(type)
