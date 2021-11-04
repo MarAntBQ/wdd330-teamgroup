@@ -42487,5 +42487,11 @@ px */
   display: block;
   width: 100%;
 }
+.pokemans .pokemon p {
+  text-align: center;
+  line-height: 2em;
+  font-weight: bold;
+  text-transform: capitalize;
+}
 
 /*# sourceMappingURL=styles.css.map */
