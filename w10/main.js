@@ -23,13 +23,25 @@ function testGetQuakesForLocation() {
         })
         .then(url => {
             getJSON(url)
-            .then(response => {
-                console.log(response);
-            })
+                .then(response => {
+                    quakes = response.features.map((quake) => {
+                        return `
+                    ${quake.properties.title} 
+                    ${new Date(
+                    quake.properties.time
+                     )}
+                    `;
+                    })
+                })
         })
     // use the url to request the correct quakes 
     //log out the quakes for now.
 }
 
 //getQuakesForLocation();
+
 testGetQuakesForLocation();
+
+const listElement = document.querySelector("#quakeList");
+// render the list of quakes
+// how did I know to look at quakes.features? I looked at the returned data from the fetch!
