@@ -9,6 +9,13 @@ const socialLinks = {
     Copyright: "https://Sites.MarBust.com"
 }
 
+var fs = require('fs');
+
+var url = fs.readFileSync('./data/database.json');
+
+//var db = JSON.parse(data);
+
+
 //Validator of Inputs
 const {
     validationResult
@@ -40,6 +47,20 @@ exports.getIndex = (req, res, next) => {
         SocialLinks: socialLinks
     });
 };
+
+function getJSON(url) {
+    return fetch(url)
+      .then(function(response) {
+        if (!response.ok) {
+          throw Error(response.statusText);
+        } else {
+          return response.json();
+        }
+      })
+      .catch(function(error) {
+        console.log(error);
+      });
+  }
 //About
 exports.getAbout = (req, res, next) => {
     res.render('template', {
@@ -58,6 +79,24 @@ exports.getServices = (req, res, next) => {
         Title: 'Mijin'
     });
 };
+exports.getLogin = (req, res, next) => {
+    res.render('template', {
+        pageTitle: 'Login',
+        PagetoLoad: 'login',
+        SocialLinks: socialLinks
+    });
+};
+
+exports.postLogin = (req, res, next) => {
+    const {
+        email,
+        password
+    } = req.body;
+    console.log(email);
+    let jsonResponseDB = getJSON(url);
+    console.log(jsonResponseDB);
+
+}
 
 //Contact
 exports.getContact = (req, res, next) => {

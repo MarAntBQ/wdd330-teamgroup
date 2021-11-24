@@ -15,8 +15,12 @@ router.get('/', publicController.getIndex);
 router.get('/about', publicController.getAbout);
 //Services
 router.get('/services', publicController.getServices);
+//Services
+router.get('/login', publicController.getLogin);
 //Contact
 router.get('/contact', publicController.getContact);
+
+router.post('/login', publicController.postLogin);
 //Post Contact
 router.post('/contact',
     [
